@@ -44,12 +44,60 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by:Rajamanikandan R RegisterNumber: 212223220082
 */
+#### Full adder:
+```
+module de4(sum, cout, a, b, cin);
+    output sum;
+    output cout;
+    input a;
+    input b;
+    input cin;
+
+	 wire w1,w2,w3;
+	 assign w1=a^b;
+	 assign w2=a&b;
+	 assign w3=w1&cin;
+	 assign sum=w1^cin;
+	 assign cout=w2|w3;
+endmodule
+```
+
+#### Full Substractor
+```
+module de4sub(df, bo, a, b, bin);
+    output df;
+    output bo;
+    input a;
+    input b;
+    input bin;
+	wire w1,w2,w3;
+	 assign w1=a^b;
+	 assign w2=(~a&b);
+	 assign w3=(~w1&bin);
+	 assign df=w1^bin;
+	 assign bo=w2|w3;
+
+endmodule
+```
 
 **RTL Schematic**
+#### Full adder
+
+![image](https://github.com/user-attachments/assets/a02afc81-904d-4ab5-8be7-9c80d612d83a)
+
+#### Full Subtractor
+![image](https://github.com/user-attachments/assets/2544900e-210e-4773-a260-5ef6caebd588)
+
 
 **Output Timing Waveform**
+#### Full Adder
+![image](https://github.com/user-attachments/assets/9a437624-c688-4078-adf2-00a8b700aa23)
+
+#### Full Substractor
+![image](https://github.com/user-attachments/assets/2a23ec6a-c14d-47ef-add4-cb84d969c4b8)
+
 
 **Result:**
 
